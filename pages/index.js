@@ -1,11 +1,14 @@
-import { useEffect } from "react";
 import Head from "next/head";
-import Image from "next/image";
-import Layout from "../components/Layout";
-import { motion, useMotionValue, useTransform } from "framer-motion";
-import Hero from "../components/Hero";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 export default function Home() {
+  const particlesInit = async (main) => {
+    await loadFull(main);
+  };
+
+  const particlesLoaded = (container) => {};
   return (
     <>
       <Head>
@@ -14,28 +17,121 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div class="hero py-10 bg-primary shadow-lg">
-        <motion.div
-          style={{
-            perspective: 1000,
+      <div className="bg-gradient-to-b from-primary to-secondary bg-opacity-50 hero py-10 bg-primary shadow-lg h-screen relative">
+        <Particles
+          id="tsparticles"
+          options={{
+            background: {
+              image: "",
+              position: "",
+              repeat: "",
+              size: "",
+              opacity: 1,
+            },
+            style: {
+              position: "absolute",
+            },
+            backgroundMask: {
+              composite: "destination-out",
+              cover: {
+                color: {
+                  value: "#fff",
+                },
+                opacity: 1,
+              },
+              enable: false,
+            },
+            fullScreen: {
+              enable: true,
+              zIndex: 0,
+            },
+            fpsLimit: 120,
+            interactivity: {
+              events: {
+                onClick: {
+                  enable: true,
+                  mode: "push",
+                },
+                onDiv: {
+                  selectors: [],
+                  enable: false,
+                  mode: [],
+                  type: "circle",
+                },
+                onHover: {
+                  enable: true,
+                  mode: "repulse",
+                },
+                resize: true,
+              },
+              modes: {
+                push: {
+                  quantity: 3,
+                },
+                repulse: {
+                  distance: 100,
+                  duration: 0.4,
+                },
+              },
+            },
+            particles: {
+              color: {
+                value: "#ffffff",
+              },
+              links: {
+                color: "#ffffff",
+                distance: 150,
+                enable: true,
+                opacity: 0.5,
+                width: 1,
+              },
+              collisions: {
+                enable: true,
+              },
+              move: {
+                direction: "none",
+                enable: true,
+                outModes: {
+                  default: "bounce",
+                },
+                random: false,
+                speed: 1,
+                straight: false,
+              },
+              number: {
+                value: 100,
+              },
+              opacity: {
+                value: 0.5,
+              },
+              shape: {
+                type: "circle",
+              },
+              size: {
+                value: { min: 1, max: 5 },
+              },
+            },
+            pauseOnBlur: true,
+            pauseOnOutsideViewport: true,
+            responsive: [],
+            detectRetina: true,
           }}
-          class="hero-content flex-col lg:flex-row gap-10"
-          onMouseMove={handleMouse}
-        >
-          <motion.img
-            style={{
-              rotateX: rotateX,
-              rotateY: rotateY,
-            }}
-            src="/LogoBigleBlanco.svg"
-            className="max-w-sm rounded-lg"
-          />
-          <div class="max-w-md">
-            <h1 class="text-5xl font-bold text-accent">A tu medida</h1>
-            <p class="py-6 text-accent">Holaaaaaaaaaaaaaaaaaaa</p>
+          init={particlesInit}
+          loaded={particlesLoaded}
+        />
+        <div className="hero-content flex-col lg:flex-row gap-10">
+          <img src="/LogoBigleBlanco.svg" className="max-w-sm rounded-lg" />
+          <div className="max-w-md">
+            <h1 className="text-5xl font-bold text-accent">
+              Paquetes de servicios online para tu empresa
+            </h1>
+            <p className="py-6 text-xl text-accent">
+              Nuestro equipo está dispuesto a ayudarte
+            </p>
           </div>
-        </motion.div>
+        </div>
       </div>
+      <Footer />
     </>
   );
 }

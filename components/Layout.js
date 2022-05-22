@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Header from "./Header";
 
 export default function Layout({ children }) {
@@ -5,6 +6,7 @@ export default function Layout({ children }) {
     <>
       <Header />
       <div className="container min-h-screen mx-auto mt-10">{children}</div>
+      <Footer />
     </>
   );
 }

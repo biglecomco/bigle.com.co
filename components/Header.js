@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/router";
 
 export default function Header() {
@@ -16,18 +15,6 @@ export default function Header() {
     };
   });
 
-  const [navScrolled, setNavScrolled] = useState("");
-
-  useEffect(() => {
-    if (clientWindowHeight > 0) {
-      setNavScrolled("scrolled");
-      console.log(clientWindowHeight + navScrolled);
-    } else {
-      setNavScrolled("");
-      console.log(clientWindowHeight + navScrolled);
-    }
-  }, [clientWindowHeight]);
-
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -35,8 +22,8 @@ export default function Header() {
       <nav
         className={
           clientWindowHeight === 0
-            ? `bg-transparent px-4 md:px-6 py-12 sticky top-0 w-full z-50 duration-500 ease-in-out`
-            : `bg-primary px-4 md:px-4 py-6 shadow sticky top-0 w-full z-50 duration-500 ease-in-out`
+            ? `bg-primary px-4 md:px-6 py-8 sticky top-0 w-full z-50 duration-500 ease-in-out`
+            : `bg-primary bg-opacity-75 px-4 md:px-4 py-6 shadow-lg sticky top-0 w-full z-50 duration-500 ease-in-out backdrop-blur-sm`
         }
       >
         <div className="container flex flex-wrap justify-between items-center mx-auto">
@@ -51,7 +38,7 @@ export default function Header() {
               <img
                 src={
                   clientWindowHeight === 0
-                    ? "/LogoBigle.svg"
+                    ? "/LogoBigleBlanco.svg"
                     : "/LogoBigleBlanco.svg"
                 }
                 alt="Bigle"
@@ -122,15 +109,7 @@ export default function Header() {
               >
                 <Link href="/quienes-somos">Quienes somos</Link>
               </li> */}
-              <li
-                className={
-                  router.asPath === "/contactenos"
-                    ? "text-base bg-secondary hover:bg-secondary-focus block py-2 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
-                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium duration-500"
-                }
-              >
-                <Link href="/contactenos">Contáctenos</Link>
-              </li>
+
               <li
                 className={
                   router.asPath === "/posts"
@@ -142,6 +121,9 @@ export default function Header() {
               </li>
             </ul>
           </div>
+          <Link href="/contactenos">
+            <a className="btn btn-secondary btn-outline">Contáctenos</a>
+          </Link>
         </div>
       </nav>
     </>
