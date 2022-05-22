@@ -30,8 +30,8 @@ export default function Header() {
           <div
             className={
               clientWindowHeight === 0
-                ? "w-28 sm:36 duration-500 ease-in-out"
-                : "w-16 md:24 duration-500 ease-in-out"
+                ? "w-28 duration-500 ease-in-out"
+                : "w-20 md:24 duration-500 ease-in-out"
             }
           >
             <Link href="/">
@@ -86,7 +86,7 @@ export default function Header() {
                 className={
                   router.asPath === "/"
                     ? "text-base bg-secondary hover:bg-secondary-focus block py-2 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
-                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium duration-500"
+                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium cursor-pointer duration-500"
                 }
               >
                 <Link href="/">Inicio</Link>
@@ -95,7 +95,7 @@ export default function Header() {
                 className={
                   router.asPath === "/servicios"
                     ? "text-base bg-secondary hover:bg-secondary-focus block py-2 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
-                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium duration-500"
+                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium cursor-pointer duration-500"
                 }
               >
                 <Link href="/servicios">Servicios</Link>
@@ -104,7 +104,7 @@ export default function Header() {
                 className={
                   router.asPath === "/quienes-somos"
                     ? "text-base bg-secondary hover:bg-secondary-focus block py-2 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
-                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium duration-500"
+                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium cursor-pointer duration-500"
                 }
               >
                 <Link href="/quienes-somos">Quienes somos</Link>
@@ -112,17 +112,17 @@ export default function Header() {
 
               <li
                 className={
-                  router.asPath === "/posts"
+                  router.asPath === "/blog"
                     ? "text-base bg-secondary hover:bg-secondary-focus block py-2 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
-                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium duration-500"
+                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium cursor-pointer duration-500"
                 }
               >
-                <Link href="/posts">Blog</Link>
+                <Link href="/blog">Blog</Link>
               </li>
             </ul>
           </div>
-          <Link href="/contactenos">
-            <a className="btn btn-secondary btn-outline">Contáctenos</a>
+          <Link href="/contactanos">
+            <a className="btn btn-secondary btn-outline">Contáctanos</a>
           </Link>
         </div>
       </nav>
