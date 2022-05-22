@@ -11,10 +11,10 @@ export default function Hero({
 }) {
   return (
     <>
-      <div className="hero rounded-lg py-8 m-4 md:mx-0 bg-primary shadow-lg">
+      <div className="hero rounded-b-xl py-8 bg-primary shadow-xl">
         {imagePosition === "" ? (
           <div className="hero-content text-center">
-            <div className="max-w-md">
+            <div className="max-w-lg">
               <h1 className="text-5xl font-bold text-accent">{title}</h1>
               <p className="py-6 text-accent">{text}</p>
               {link && (
@@ -27,7 +27,7 @@ export default function Hero({
         ) : imagePosition === "left" ? (
           <div className="hero-content flex-col lg:flex-row gap-10">
             <img src={image} className="max-w-sm rounded-lg" />
-            <div className="max-w-md">
+            <div className="max-w-lg">
               <h1 className="text-5xl font-bold text-accent">{title}</h1>
               <p className="py-6 text-accent">{text}</p>
               {link && (
@@ -40,7 +40,7 @@ export default function Hero({
         ) : imagePosition === "right" ? (
           <div className="hero-content flex-col lg:flex-row-reverse gap-10">
             <img src={image} className="max-w-sm rounded-lg" />
-            <div className="max-w-md">
+            <div className="max-w-lg">
               <h1 className="text-5xl font-bold text-accent">{title}</h1>
               <p className="py-6 text-accent">{text}</p>
               {link && (

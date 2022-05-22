@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import Footer from "../components/Footer";
@@ -120,7 +121,7 @@ export default function Home() {
           loaded={particlesLoaded}
         />
         <div className="hero-content flex-col lg:flex-row gap-10">
-          <img src="/LogoBigleBlanco.svg" className="max-w-sm rounded-lg" />
+          <img src="/LogoBigleBlanco.svg" className="max-w-xs" />
           <div className="max-w-md">
             <h1 className="text-5xl font-bold text-accent">
               Paquetes de servicios online para tu empresa

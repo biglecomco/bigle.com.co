@@ -85,26 +85,26 @@ export default function Header() {
               <li
                 className={
                   router.asPath === "/"
-                    ? "text-base bg-secondary hover:bg-secondary-focus block py-2 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
-                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium cursor-pointer duration-500"
+                    ? "text-base bg-secondary hover:bg-secondary-focus block py-3 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
+                    : "text-base hover:bg-secondary-focus block py-3 px-4 text-secondary rounded font-medium cursor-pointer duration-500"
                 }
               >
                 <Link href="/">Inicio</Link>
               </li>
               <li
                 className={
-                  router.asPath === "/servicios"
-                    ? "text-base bg-secondary hover:bg-secondary-focus block py-2 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
-                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium cursor-pointer duration-500"
+                  router.asPath === "/paquetes"
+                    ? "text-base bg-secondary hover:bg-secondary-focus block py-3 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
+                    : "text-base hover:bg-secondary-focus block py-3 px-4 text-secondary rounded font-medium cursor-pointer duration-500"
                 }
               >
-                <Link href="/servicios">Servicios</Link>
+                <Link href="/paquetes">Paquetes</Link>
               </li>
               {/* <li
                 className={
                   router.asPath === "/quienes-somos"
-                    ? "text-base bg-secondary hover:bg-secondary-focus block py-2 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
-                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium cursor-pointer duration-500"
+                    ? "text-base bg-secondary hover:bg-secondary-focus block py-3 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
+                    : "text-base hover:bg-secondary-focus block py-3 px-4 text-secondary rounded font-medium cursor-pointer duration-500"
                 }
               >
                 <Link href="/quienes-somos">Quienes somos</Link>
@@ -113,17 +113,23 @@ export default function Header() {
               <li
                 className={
                   router.asPath === "/blog"
-                    ? "text-base bg-secondary hover:bg-secondary-focus block py-2 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
-                    : "text-base hover:bg-secondary-focus block py-2 px-4 text-secondary rounded font-medium cursor-pointer duration-500"
+                    ? "text-base bg-secondary hover:bg-secondary-focus block py-3 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
+                    : "text-base hover:bg-secondary-focus block py-3 px-4 text-secondary rounded font-medium cursor-pointer duration-500"
                 }
               >
                 <Link href="/blog">Blog</Link>
               </li>
+              <li
+                className={
+                  router.asPath === "/contactanos"
+                    ? "btn btn-secondary duration-500"
+                    : "btn btn-secondary btn-outline duration-500"
+                }
+              >
+                <Link href="/contactanos">Contáctanos</Link>
+              </li>
             </ul>
           </div>
-          <Link href="/contactanos">
-            <a className="btn btn-secondary btn-outline">Contáctanos</a>
-          </Link>
         </div>
       </nav>
     </>
