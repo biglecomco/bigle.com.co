@@ -38,7 +38,7 @@ export default function Header() {
             }
           >
             <Link href="/">
-              <LogoBlanco width="auto" height="auto" />
+              <LogoBlanco className="fill-inherit" />
             </Link>
           </div>
           <button
