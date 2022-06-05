@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import LogoBlanco from "../assets/images/LogoBigleBlanco.svg";
+import LogoNegro from "../assets/images/LogoBigle.svg";
+
 export default function Header() {
   const [clientWindowHeight, setClientWindowHeight] = useState(0);
   const handleScroll = () => {
@@ -23,7 +26,7 @@ export default function Header() {
         className={
           clientWindowHeight === 0
             ? `bg-primary px-4 md:px-6 py-8 sticky top-0 w-full z-50 duration-500 ease-in-out`
-            : `bg-primary bg-opacity-75 px-4 md:px-4 py-6 shadow-lg sticky top-0 w-full z-50 duration-500 ease-in-out backdrop-blur-sm`
+            : `bg-primary bg-opacity-70 px-4 md:px-4 py-6 shadow-lg sticky top-0 w-full z-50 duration-500 ease-in-out backdrop-blur-sm`
         }
       >
         <div className="container flex flex-wrap justify-between items-center mx-auto">
@@ -35,14 +38,7 @@ export default function Header() {
             }
           >
             <Link href="/">
-              <img
-                src={
-                  clientWindowHeight === 0
-                    ? "/LogoBigleBlanco.svg"
-                    : "/LogoBigleBlanco.svg"
-                }
-                alt="Bigle"
-              />
+              <LogoBlanco />
             </Link>
           </div>
           <button
@@ -110,7 +106,7 @@ export default function Header() {
                 <Link href="/quienes-somos">Quienes somos</Link>
               </li> */}
 
-              <li
+              {/* <li
                 className={
                   router.asPath === "/blog"
                     ? "text-base bg-secondary hover:bg-secondary-focus block py-3 px-4 rounded font-semibold shadow text-white cursor-pointer duration-500"
@@ -118,7 +114,7 @@ export default function Header() {
                 }
               >
                 <Link href="/blog">Blog</Link>
-              </li>
+              </li> */}
               <li
                 className={
                   router.asPath === "/contactanos"
