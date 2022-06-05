@@ -38,7 +38,7 @@ export default function Header() {
             }
           >
             <Link href="/">
-              <LogoBlanco style={{ width: "inherit", height: "inherit" }} />
+              <LogoBlanco className="w-28 h-auto" />
             </Link>
           </div>
           <button
