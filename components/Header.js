@@ -38,7 +38,7 @@ export default function Header() {
             }
           >
             <Link href="/">
-              <LogoBlanco />
+              <LogoBlanco width="80" />
             </Link>
           </div>
           <button
