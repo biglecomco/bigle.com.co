@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Script from "next/script";
+import Image from "next/image";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Logo from "../assets/images/LogoBigleBlanco.svg";
+import LogoBlanco from "../assets/images/logo-blanco.png";
 export default function Home() {
   const particlesInit = async (main) => {
     await loadFull(main);
@@ -18,7 +18,7 @@ export default function Home() {
         <meta name="description" content="Soluciones a la medida" />
       </Head>
       <Header />
-      <div className="bg-gradient-to-b from-primary to-secondary bg-opacity-50 hero py-10 bg-primary shadow-lg h-screen relative">
+      <div className="bg-gradient-to-b from-primary to-secondary bg-opacity-50 hero py-10 bg-primary shadow-lg min-h-screen relative">
         <Particles
           id="tsparticles"
           options={{
@@ -105,7 +105,9 @@ export default function Home() {
           loaded={particlesLoaded}
         />
         <div className="hero-content flex-col lg:flex-row gap-10">
-          <Logo className="w-full" />
+          <div className="max-w-sm">
+            <Image src={LogoBlanco} className="" />
+          </div>
           <div className="max-w-md">
             <h1 className="text-5xl font-bold text-accent">
               Paquetes de servicios online para tu empresa

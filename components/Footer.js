@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
-import LogoBlanco from "../assets/images/LogoBigleBlanco.svg";
+import LogoBlanco from "../assets/images/logo-blanco.png";
 
 export default function Footer() {
   return (
     <>
       <footer className="footer footer-center p-10 mt-10 bg-primary text-accent z-50">
-        <div>
-          <LogoBlanco className="w-60" />
+        <div className="max-w-xs">
+          <Image src={LogoBlanco} className="" />
           <p>
             Copyright © {new Date().getUTCFullYear()} - Todos los derechos
             reservados
