@@ -50,7 +50,7 @@ export const paquetes = [
   {
     id: 3,
     category: "web",
-    title: "Paquete Ecommerce",
+    title: "Paquete E-Commerce",
     slug: "ecommerce",
     image: "/assets/images/paquetes/web/ecommerce.jpg",
     description:
