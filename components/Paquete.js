@@ -38,7 +38,7 @@ export default function Paquete({ paquete, showAs }) {
                 layout="fill"
                 objectFit="contain"
                 quality={100}
-                alt="logo"
+                alt={`Imagen de ${paquete.title}`}
               />
             </a>
           </Link>
@@ -57,14 +57,5 @@ export default function Paquete({ paquete, showAs }) {
       </>
     );
   }
-  return (
-    <>
-      <Layout>
-        <Link href={`/paquetes/paquete`}>
-          <h1>{paquete.title}</h1>
-          <p>{paquete.minidescription}</p>
-        </Link>
-      </Layout>
-    </>
-  );
+  return <></>;
 }

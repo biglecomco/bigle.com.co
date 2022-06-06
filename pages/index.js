@@ -106,7 +106,7 @@ export default function Home() {
         />
         <div className="hero-content flex-col lg:flex-row gap-10">
           <div className="max-w-sm">
-            <Image src={LogoBlanco} className="" />
+            <Image src={LogoBlanco} alt="Logo Bigle" className="" />
           </div>
           <div className="max-w-md">
             <h1 className="text-5xl font-bold text-accent">

@@ -8,7 +8,7 @@ export default function Footer() {
     <>
       <footer className="footer footer-center p-10 mt-10 bg-primary text-accent z-50">
         <div className="max-w-xs">
-          <Image src={LogoBlanco} className="" />
+          <Image src={LogoBlanco} alt="Logo Bigle" className="" />
           <p>
             Copyright © {new Date().getUTCFullYear()} - Todos los derechos
             reservados

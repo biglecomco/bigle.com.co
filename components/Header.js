@@ -40,7 +40,7 @@ export default function Header() {
           >
             <Link href="/">
               <a>
-                <Image src={LogoBlanco} className="" />
+                <Image src={LogoBlanco} alt="Logo Bigle" className="" />
               </a>
             </Link>
           </div>
