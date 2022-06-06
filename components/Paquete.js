@@ -16,10 +16,74 @@ export default function Paquete({ paquete, showAs }) {
         </Head>
         <Hero title={paquete.title} />
         <TitleSeparator title={paquete.minidescription} />
-        <div className="grid grid-cols-2 gap-6">
-          <div className="py-20 px-10 text-xl shadow-xl rounded-xl">
+        <div className="flex flex-col md:flex-row gap-4 mx-2 my-5 md:mx-0">
+          <div className="md:flex-1 p-10 text-2xl text-secondary bg-primary shadow-xl rounded-xl min-h-[40vh]">
             <p>{paquete.description}</p>
           </div>
+          <div className="md:flex-1 p-10 text-xl text-primary bg-base-200 shadow-xl rounded-xl">
+            <p>Aquí va una imagen del producto o alguna ilustración</p>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center md:rounded-xl shadow-xl bg-accent-focus w-full my-5">
+          <div className="text-4xl text-primary font-semibold text-center my-4">
+            ¿Interesado en nuestro {paquete.title}?
+          </div>
+          <Link href="/contactanos">
+            <a className="btn btn-primary btn-lg animate-pulse my-5">
+              Contáctanos
+            </a>
+          </Link>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-4 mx-4 md:mx-0">
+          <div className="flex-1 p-10 text-xl text-primary bg-base-200 shadow-xl rounded-xl">
+            <p>Aquí va una imagen del producto o alguna ilustración</p>
+          </div>
+          <div className="flex-1 p-10 text-xl text-secondary bg-primary shadow-xl rounded-xl min-h-[40vh]">
+            <p>{paquete.description}</p>
+          </div>
+        </div>
+
+        <div className="flex flex-col my-5 md:mx-0">
+          <TitleSeparator title="¿Que incluye?" />
+          <div className="overflow-x-auto shadow-xl">
+            <table className="table w-full">
+              <thead>
+                <tr>
+                  <th>Característica</th>
+                  <th>¿Lo tiene?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="hover">
+                  <td>Sitio web completo</td>
+                  <td>¿?</td>
+                </tr>
+
+                <tr className="hover">
+                  <td>Cuatro páginas a tu gusto</td>
+                  <td>¡Sí!</td>
+                </tr>
+
+                <tr className="hover">
+                  <td>Formulario de contacto</td>
+                  <td>No.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center md:rounded-xl shadow-xl bg-accent-focus w-full my-5">
+          <div className="text-4xl text-primary font-semibold text-center my-4">
+            ¿Interesado en nuestro {paquete.title}?
+          </div>
+          <Link href="/contactanos">
+            <a className="btn btn-primary btn-lg animate-pulse my-5">
+              Contáctanos
+            </a>
+          </Link>
         </div>
       </>
     );
