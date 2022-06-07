@@ -19,13 +19,38 @@ export default function Home() {
   const particlesLoaded = (container) => {};
   const settings = {
     dots: false,
-    arrows: true,
+    arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+        },
+      },
+    ],
   };
   return (
     <>
@@ -150,17 +175,17 @@ export default function Home() {
               description={card.description}
               minidescription={card.minidescription}
               caracteristicas={card.caracteristicas}
-              showAs="card"
+              showAs="minicard"
             />
           ))}
         </div>
       </div>
       <TitleSeparator title={"Nuestros clientes"} />
-      <div className="grid grid-cols-1 gap-4 p-3 sm:p-0">
+      <div className="container mx-auto grid grid-cols-1 gap-4 p-3 sm:p-0">
         <div className="col-span-1">
           <Slider {...settings}>
-            <div>
-              <h3>1</h3>
+            <div className="max-w-sm mx-auto">
+              <Image src={LogoBlanco} alt="Logo Bigle" className="" />
             </div>
             <div>
               <h3>2</h3>
