@@ -20,7 +20,7 @@ export default function Paquetes() {
           text="Con estos paquetes tendrás el servicio que deseas implementado de la mejor manera posible por nuestros expertos"
         />
         <TitleSeparator
-          title="Página web"
+          title="Páginas web"
           text="Desde una landing page hasta un e-commerce, nosotros lo haremos."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-3 sm:p-0">
