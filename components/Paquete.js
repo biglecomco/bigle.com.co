@@ -15,7 +15,7 @@ export default function Paquete(props) {
         </Head>
         <Hero title={props.title} />
         <TitleSeparator title={props.minidescription} />
-        <div className="flex flex-col md:flex-row gap-4 mx-2 my-5 md:mx-0">
+        <div className="flex flex-col md:flex-row gap-4 mx-2 my-10 md:mx-0">
           <div className="md:flex-1 p-10 text-2xl text-secondary bg-primary shadow-xl rounded-xl min-h-[40vh]">
             <p>{props.description}</p>
           </div>
@@ -24,7 +24,7 @@ export default function Paquete(props) {
           </div>
         </div>
 
-        <div className="flex flex-col items-center md:rounded-xl shadow-xl bg-accent-focus w-full my-5">
+        <div className="flex flex-col items-center md:rounded-xl shadow-xl bg-accent-focus w-full my-10">
           <div className="text-4xl text-primary font-semibold text-center my-4">
             ¿Interesado en nuestro {props.title}?
           </div>
@@ -35,7 +35,7 @@ export default function Paquete(props) {
           </Link>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-4 mx-4 md:mx-0">
+        <div className="flex flex-col md:flex-row gap-4 mx-4 md:mx-0 my-10">
           <div className="flex-1 p-10 text-xl text-primary bg-base-200 shadow-xl rounded-xl">
             <p>Aquí va una imagen del producto o alguna ilustración</p>
           </div>
@@ -44,7 +44,7 @@ export default function Paquete(props) {
           </div>
         </div>
 
-        <div className="flex flex-col my-5 md:mx-0">
+        <div className="flex flex-col my-10 md:mx-0">
           <TitleSeparator title="¿Que incluye?" />
           <div className="overflow-x-auto shadow-xl">
             <table className="table w-full">
@@ -87,8 +87,22 @@ export default function Paquete(props) {
       </>
     );
   }
-  if (props.showAs === "list") {
-    return <>List</>;
+  if (props.showAs === "minicard") {
+    return (
+      <>
+        <div className="card bg-base-300 shadow-xl">
+          <div className="card-body text-neutral">
+            <h3 className="text-2xl font-medium text-center">{props.title}</h3>
+            <p className="text-center my-3">{props.minidescription}</p>
+            <div className="card-actions justify-center">
+              <Link href={`/paquetes/${props.category}/${props.slug}`}>
+                <a className="btn btn-secondary shadow-xl">Leer más</a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </>
+    );
   }
   if (props.showAs === "card") {
     return (
