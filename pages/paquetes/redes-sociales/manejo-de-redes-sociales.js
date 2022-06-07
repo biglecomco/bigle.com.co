@@ -13,7 +13,7 @@ export default function ManejoRedes() {
               key={paquete.id}
               title={paquete.title}
               link={paquete.slug}
-              miniDescription={paquete.miniDescription}
+              minidescription={paquete.minidescription}
               description={paquete.description}
               caracteristicas={paquete.caracteristicas}
               imagen1=""
