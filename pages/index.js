@@ -2,15 +2,31 @@ import Head from "next/head";
 import Image from "next/image";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import Slider from "react-slick";
+
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import LogoBlanco from "../assets/images/logo-blanco.png";
+import TitleSeparator from "../components/TitleSeparator";
+import { paquetes } from "../data/paquetes";
+import Paquete from "../components/Paquete";
+
 export default function Home() {
   const particlesInit = async (main) => {
     await loadFull(main);
   };
 
   const particlesLoaded = (container) => {};
+  const settings = {
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
   return (
     <>
       <Head>
@@ -116,6 +132,52 @@ export default function Home() {
               Nuestro equipo está dispuesto a ayudarte
             </p>
           </div>
+        </div>
+      </div>
+      <TitleSeparator
+        title={"Nuestros servicios"}
+        text={"¿Qué podemos hacer?"}
+      />
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-3 sm:p-0">
+          {paquetes.map((card) => (
+            <Paquete
+              key={card.id}
+              category={card.category}
+              title={card.title}
+              slug={card.slug}
+              image={card.image}
+              description={card.description}
+              minidescription={card.minidescription}
+              caracteristicas={card.caracteristicas}
+              showAs="card"
+            />
+          ))}
+        </div>
+      </div>
+      <TitleSeparator title={"Nuestros clientes"} />
+      <div className="grid grid-cols-1 gap-4 p-3 sm:p-0">
+        <div className="col-span-1">
+          <Slider {...settings}>
+            <div>
+              <h3>1</h3>
+            </div>
+            <div>
+              <h3>2</h3>
+            </div>
+            <div>
+              <h3>3</h3>
+            </div>
+            <div>
+              <h3>4</h3>
+            </div>
+            <div>
+              <h3>5</h3>
+            </div>
+            <div>
+              <h3>6</h3>
+            </div>
+          </Slider>
         </div>
       </div>
       <Footer />
