@@ -10,6 +10,7 @@ export default function WebsiteAvanzado() {
           .filter((paquete) => paquete.slug === "website-avanzado")
           .map((paquete) => (
             <Paquete
+              key={paquete.id}
               title={paquete.title}
               link={paquete.slug}
               miniDescription={paquete.miniDescription}

@@ -10,6 +10,7 @@ export default function ManejoRedes() {
           .filter((paquete) => paquete.slug === "manejo-de-redes-sociales")
           .map((paquete) => (
             <Paquete
+              key={paquete.id}
               title={paquete.title}
               link={paquete.slug}
               miniDescription={paquete.miniDescription}

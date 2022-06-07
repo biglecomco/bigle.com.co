@@ -10,6 +10,7 @@ export default function WebsiteSencillo() {
           .filter((paquete) => paquete.slug === "website-sencillo")
           .map((paquete) => (
             <Paquete
+              key={paquete.id}
               title={paquete.title}
               link={paquete.slug}
               miniDescription={paquete.miniDescription}

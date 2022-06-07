@@ -10,6 +10,7 @@ export default function ECommerce() {
           .filter((paquete) => paquete.slug === "e-commerce")
           .map((paquete) => (
             <Paquete
+              key={paquete.id}
               title={paquete.title}
               link={paquete.slug}
               miniDescription={paquete.miniDescription}
